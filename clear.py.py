@@ -1,4 +1,4 @@
-token = "ODcwNjY2MTQ0NDI2NjI3MDky.YQQFCQ.U-2GLF7Nzw3V4vCqmq8za4Oj4VY"
+token = "-----------TOKEN-----------"
 prefix = "k!" 
 
 #--- BOT ---
