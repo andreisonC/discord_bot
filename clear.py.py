@@ -5,12 +5,6 @@ prefix = "k!"
 
 import discord
 from discord.ext import commands
-print("██╗  ██╗ ██████╗ ███████╗██╗  ██╗██")
-print("██║ ██╔╝██╔═══██╗██╔════╝██║ ██╔╝██║")
-print("█████╔╝ ██║   ██║███████╗█████╔╝ ██║")
-print("██╔═██╗ ██║   ██║╚════██║██╔═██╗ ██║")
-print("██║  ██╗╚██████╔╝███████║██║  ██╗██║")
-print("╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝");
 
 bot = commands.Bot(command_prefix=prefix, self_bot=True)
 bot.remove_command("help")
