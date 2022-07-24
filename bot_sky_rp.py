@@ -75,7 +75,7 @@ Qualquer duvida com bot está aqui:
 ```
 .regras
 .tiktok
-.rp
+.rpb
 .ajudarp
 .help```
 ''')
@@ -83,6 +83,9 @@ Qualquer duvida com bot está aqui:
         
         elif message.content == '!':
             await message.channel.send(f'''EPA!!! {message.author.name}, esse é meu prefixo''')
+
+        elif message.content == '.ip':
+            await message.author.send(f'Olá, o ip do server é: {os.linesep}')
 
 
         async def on_menber_join(self, member):
@@ -96,4 +99,4 @@ Qualquer duvida com bot está aqui:
 intents = discord.Intents.default()
 intents.members = True
 client = MyClient(intents=intents)
-client.run(' ')
+client.run('OTEwMjM2MTM3NjMxNjc0NDc5.G_XsZr.T2bqW4JYe9CMEB4bz3NxhNcTtAXigGZzX_gHL8')
