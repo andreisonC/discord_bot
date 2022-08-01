@@ -1,5 +1,10 @@
 import discord
 import os
+from discord.utils import *
+from discord.ext import commands 
+from discord import Permissions
+
+
 
 
 
@@ -7,8 +12,9 @@ class MyClient(discord.Client):
     async def on_ready(self):                   
         print('Developed by @amdre.py')
         print('Funcionando como: {0}!'.format(self.user))
+        print('|SERVER  | |CONTEUDO     | |AUTOR   ')
     async def on_message(self, message):
-        print('Mensagem de {0.author}:{0.content}'.format(message))
+        print('{0.guild}| {0.content} |{0.author}| '.format(message))
         if message.content == '.regras':
             await message.channel.send(f'''Olá, as regras do servidor são:
             {os.linesep}:point_right:1. Respeitar todos igualmente.
@@ -23,16 +29,20 @@ class MyClient(discord.Client):
         
         
         elif message.content == '.tiktok':
-             await message.channel.send(f'''{message.author.name}TikTok oficial da SKY {os.linesep} https://www.tiktok.com/@oficial_teamsky {os.linesep} Passa lá :grin:''')
+             await message.channel.send(f'''{message.author.name} TikTok oficial da SKY {os.linesep} https://www.tiktok.com/@oficial_teamsky {os.linesep} Passa lá :grin:''')
         
         
         elif message.content == '.Rp':
-            await message.author.send(f'''**COMANDO EM PROGRAMAÇÃO** Qualquer duvida, digite **.ajudaRp**''')
+            await message.author.send(f'''Oi :D, olha o link do server do discord da SKY city: https://discord.gg/qrGSkAMjvR
+digite: **.wl** para ter acesso ao cadastro da White List!
+Qualquer outra duvida digite: **.ajudarp** que te levaremos diretamente para o suporte do server ;D''')
             await message.channel.send(f'''Salve {message.author.name}, Te mandei uma mensagem no privado, confere lá''')
         
         
         elif message.content == '.rp':
-            await message.author.send(f'''**COMANDO EM PROGRAMAÇÃO** Qualquer duvida, digite **.ajudaRp**''')
+            await message.author.send(f'''Oi :D, olha o link do server do discord da SKY city: https://discord.gg/qrGSkAMjvR
+digite: **.wl** para ter acesso ao cadastro da White List!
+Qualquer outra duvida digite: **.ajudarp** que te levaremos diretamente para o suporte do server ;D''')
             await message.channel.send(f'''Salve {message.author.name}, Te mandei uma mensagem no privado, confere lá''')        
         
         elif message.content == '.ajudarp':
@@ -53,7 +63,11 @@ qualquer duvida com bot está aqui:
 .tiktok
 .rp
 .ajudarp
-.help```
+.help
+.creditos
+.staff`
+.site
+.wl``
 ''') 
 
         elif message.content == '.ajuda':
@@ -66,7 +80,11 @@ Qualquer duvida com bot está aqui:
 .tiktok
 .rp
 .ajudarp
-.help```
+.help
+.creditos
+.staff
+.site
+.wl```
 ''')
         
 
@@ -75,17 +93,44 @@ Qualquer duvida com bot está aqui:
 ```
 .regras
 .tiktok
-.rpb
+.rp
 .ajudarp
-.help```
+.help
+.creditos
+.staff
+.site
+.wl```
 ''')
         
         
-        elif message.content == '!':
+        elif message.content == '.':
             await message.channel.send(f'''EPA!!! {message.author.name}, esse é meu prefixo''')
 
         elif message.content == '.ip':
             await message.author.send(f'Olá, o ip do server é: {os.linesep}')
+
+        elif message.content == '.qp':
+            await message.author.send(f'<:gx_quepro:909147516417753128>')
+
+        elif  message.content == '.wl':
+            await message.author.send(f'OII :D, ainda to esperando link pra por aqui no bot, assim que estiver pronto eu atualizo :D')
+            await message.channel.send(f'Olá <@!{message.author.id}>, te mandei o link lá no privado!')
+        elif message.content =='.creditos':
+            await message.channel.send(f'''Oi :3 <@!{message.author.id}>, bot criado por <@!424190619968339968>
+Insta dele :https://www.instagram.com/amdre.py/ qualquer job ou algo do tipo chama na dm :D''')
+    
+
+        elif message.content =='.staff':
+            await message.author.send('Aqui está o link:  https://forms.gle/B73JiozWFn417wJE9')
+            await message.channel.send(f'Oi , Fala <@!{message.author.id}>, mano temos vagas para staff se quiser entrar so responder esse form que te mandei no privado!')
+
+
+        elif message.content == '.site':
+            await message.channel.send(f'''Olá <@!{message.author.id}>, site oficial da SKY team: https://andrezinpy.github.io/TEAM-SKY_SITE/''')
+
+        elif message.content == '.marcar':
+            await message.channel.send(f'@everyone')
+
 
 
         async def on_menber_join(self, member):
@@ -96,7 +141,11 @@ Qualquer duvida com bot está aqui:
 
 
 
+
+
+
+
 intents = discord.Intents.default()
 intents.members = True
 client = MyClient(intents=intents)
-client.run('OTEwMjM2MTM3NjMxNjc0NDc5.G_XsZr.T2bqW4JYe9CMEB4bz3NxhNcTtAXigGZzX_gHL8')
+client.run('')
